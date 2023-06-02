@@ -1,0 +1,36 @@
+:PROPERTIES:
+:ID:       463a905a-a87d-4f2a-a92e-5b55a999c11d
+:END:
+#+title: Denotational Design
+- [[https://youtu.be/bmKYiUOEo2A][Lecture]]
+- [[http://conal.net/talks/denotational-design-lambdajam-2015.pdf][Slides]]
+* Goals
+- Abstractions => Precise, elegant, reusable
+- Implementations => Correct, efficient, maintainable
+- Documentation => Clear, simple accurate
+* Abstraction
+:PROPERTIES:
+:ID:       03b22671-9087-43a4-87fa-3c76c14f7702
+:END:
+- Creating a whole new semantic level
+- Constructing complex programs by building computational objects of increasing complexity
+* Conventional programming
+- Precise about how, not what
+* Denotative programming
+:PROPERTIES:
+:ID:       d3675090-c812-4e40-a009-b8dccaa6ac71
+:END:
+- [[https://en.wikipedia.org/wiki/Peter_Landin][Peter Landin]] suggested "denotative" to replace "ill-defined" "functional" and "declarative"
+- Nested expression structure
+- Each expression /denotes/ something
+  - depending only on denotation of subexpressions
+"...gives us a test for whether the notation is genuinely functional or merely masquerading." /(The Next 700 Programing Languages, 1966)/
+* What is Denotational design
+- Design methodology for "genuinely functional" programming
+  - Precise, simple, & compelling specification
+  - Informs use & implementation w/o entangling them
+  - Std algebraic abstractions
+  - No abstraction leaks
+  - Laws for free
+  - Principled construction of correct implementation
+* TODO Lecture 00:21:47

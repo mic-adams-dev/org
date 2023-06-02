@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       812d467a-2c15-4df4-ab20-4dafd4e8a667
+:END:
+#+title: Lexical Analysis
+
+* Representation
+- Source Code -> Tokens -> Abstract Syntax Tree
+
+- Done by lexer
+  - AKA tokenizer/scanner
+** Tokens
+  - Small data structures that are fed to parser
+  - Parser turns tokens into AST

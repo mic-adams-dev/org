@@ -1,0 +1,63 @@
+:PROPERTIES:
+:ID:       e859916e-55e7-4466-a262-cbf1c84e456b
+:END:
+#+OPTIONS: ^:{}
+#+title: Category
+
+* What is a category
+:PROPERTIES:
+:ID:       eb0db9df-4c03-4d7a-9fa8-f98c932ff944
+:END:
+- Objects and arrows that go between them
+** Arrows
+- Morphisms => Functions
+#+NAME: C++ Example
+#+BEGIN_SRC c++
+  B f(A a);
+  C g(B b);
+
+  C g_after_f(A a) {
+    return g(f(a));
+  }
+#+END_SRC
+#+NAME: Haskell Example
+#+BEGIN_SRC haskell
+  f :: A -> B
+  g :: B -> C
+  g . f -- Composition (Type Signature: A -> C)
+#+END_SRC
+#+NAME: B combinator (Bluebird)
+#+BEGIN_SRC haskell
+  bluebird :: (b -> c) -> (a -> b) -> a -> c
+#+END_SRC
+* Properties of composition
+:PROPERTIES:
+:ID:       c7b45b25-ea17-4598-bbb6-d6ae6a9a30f9
+:END:
+- Composition is associative
+- h \circ (g \circ f) = (h \circ g) \circ f = h \circ g \circ f
+#+NAME: Pseudo Haskell
+#+BEGIN_SRC haskell
+  f :: A -> B
+  g :: B -> C
+  h :: C -> D
+  h . (g . f) == (h . g) . f == h . g . f
+#+END_SRC
+- For every object A there is an arrow which is a unit of composition
+  - The arrow loops from the object of itself
+  - Unit of composition = when composed with any arrow that starts at A or ends at A, respectively, it gives back the same arrow
+  - Unit arrow for object A is called id_{A}
+  - f \circ id_{A} = f
+  - id_{B} \circ f = f
+#+NAME: In haskell
+#+BEGIN_SRC haskell
+  id :: a -> a
+  id x = x
+#+END_SRC
+#+NAME: In rust
+#+BEGIN_SRC rust
+  fn id<T>(a: T) -> T {
+    a
+  }
+#+END_SRC
+

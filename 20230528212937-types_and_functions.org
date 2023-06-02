@@ -1,0 +1,41 @@
+:PROPERTIES:
+:ID:       aadafe27-db92-414d-ba5a-c06e2a125406
+:END:
+#+title: Types and Functions
+
+* What are Types?
+- Intuitively sets of values
+- [[id:463a905a-a87d-4f2a-a92e-5b55a999c11d][Denotational Design]]
+#+name: Factorial
+#+begin_src haskell
+  fact n = product [1 .. n]
+#+end_src
+#+name: Factorial in C
+#+begin_src c
+  int fact (int n) {
+    int result = 1;
+    for (int i = 2; i <= n; ++ i)
+      result *= i;
+    return result
+  }
+#+end_src
+#+name: Factorial in C++
+#+begin_src c++
+  using namespace std::ranges;
+
+  auto fact(int n) -> int {
+    auto vals = views::iota(1, n);
+    return std::reduce(begin(vals), end(vals), 1, std::multiplies{});
+  }
+#+end_src
+#+name: Factorial in Rust
+#+begin_src rust
+  fn fact(n: i32) -> i32 {
+    (1..=n).product()
+  }
+#+end_src
+** Pure function
+- Function always produces same output given same input, no side effects
+- Functions that can be implemented with same formula for any types
+  => Parametrically polymorphic
+- Functions to Bool = predicates
